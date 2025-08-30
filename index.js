@@ -92,7 +92,9 @@ async function displayPokemons(pokemons) {
 
 filterForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  const selectedType = typeSelect.value; // Obtenemos el tipo elegido
+
+  const formData = new FormData(event.target);
+  const selectedType = formData.get("type-select"); // Obtenemos el tipo elegido
   loadPokemons(selectedType); // Llamamos a la función con el filtro
 });
 
