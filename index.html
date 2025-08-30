@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Pokemones</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Pokemones con Filtro por Tipo</h1>
+
+  <!-- Filtro -->
+  <form id="filter-form">
+    <label for="type-select">Selecciona un tipo:</label>
+    <select id="type-select">
+      <option value="">Todos</option>
+    </select>
+    <button type="submit">Filtrar</button>
+  </form>
+
+  <!-- Contenedor de la lista -->
+  <div id="pokemon-list" class="pokemon-list"></div>
+
+  <script src="index.js"></script>
+</body>
+</html>
