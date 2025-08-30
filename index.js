@@ -16,6 +16,8 @@ async function loadTypes() {
     const response = await fetch(`${API_URL}/type`);
     const data = await response.json();
 
+    console.log("Tipos disponibles:", data.results);
+
     // Llenamos el <select> con los tipos
     data.results.forEach((type) => {
       const option = document.createElement("option");
@@ -50,6 +52,8 @@ async function loadPokemons(type = "") {
       const data = await response.json();
       pokemons = data.results;
     }
+
+      console.log("Pokemones cargados:", pokemons); 
 
     // Enviamos la lista para mostrar en pantalla
     displayPokemons(pokemons);
@@ -96,6 +100,7 @@ filterForm.addEventListener("submit", (event) => {
   const formData = new FormData(event.target);
   const selectedType = formData.get("type-select"); // Obtenemos el tipo elegido
   loadPokemons(selectedType); // Llamamos a la función con el filtro
+  console.log(formData);
 });
 
 // ===========================================
